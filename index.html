@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>革しごと手帖</title>
+  <meta name="description" content="レザークラフトのわからないことをまとめた自分用ノート。基本情報、ハトメ・カシメ・穴の号数とサイズ、お気に入りサイトや動画の埋め込み。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>革しごと手帖</span>
+      </a>
+      <nav class="nav" aria-label="ページ内メニュー">
+        <a href="#basics">基本</a>
+        <a href="#sizes">号数・サイズ</a>
+        <a href="#cad">CADヘルプ</a>
+        <a href="#favorites">お気に入り</a>
+        <a href="#notes">マイメモ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">LEATHER CRAFT NOTEBOOK</p>
+        <h1>迷ったら、ここを開く。</h1>
+        <p class="lead">革の基本、ハトメ・カシメ・穴あけポンチの号数とサイズ、参考にしているサイトや動画をひとつにまとめた自分用ノートです。</p>
+        <div class="quick">
+          <label for="mmInput" class="quick-label">ポンチ号数をすぐ計算</label>
+          <div class="quick-row">
+            <input id="mmInput" type="number" step="0.1" min="0.3" value="3.0" inputmode="decimal" aria-describedby="mmResult">
+            <span class="unit">mm</span>
+            <span class="arrow" aria-hidden="true">→</span>
+            <output id="mmResult" class="quick-out">10号</output>
+          </div>
+          <p class="hint">穴あけポンチ（ハトメ抜き）は 1号 = 0.3mm。号数 × 0.3 = 穴の直径です。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 基本情報 -->
+    <section id="basics" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>基本情報</h2>
+          <p>はじめに押さえておきたい用語・道具・工程。タップで開きます。</p>
+        </div>
+        <div class="basics-grid">
+          <details class="card" open>
+            <summary>革の種類（鞣し方）</summary>
+            <dl class="kv">
+              <dt>タンニン鞣し（ヌメ革）</dt>
+              <dd>植物の渋で鞣した革。硬めでコバ磨き・刻印・染色がしやすく、使うほど色が濃くなる（経年変化）。水シミができやすい。</dd>
+              <dt>クローム鞣し</dt>
+              <dd>薬品で鞣した革。柔らかく発色がよく、水や傷に強い。コバ磨きはしにくいので、ヘリ返しやコバ塗料で仕上げることが多い。</dd>
+              <dt>コンビ鞣し</dt>
+              <dd>両方を組み合わせた革。ほどよい柔らかさとコシがある。</dd>
+            </dl>
+          </details>
+
+          <details class="card" open>
+            <summary>革の単位・部位・面</summary>
+            <dl class="kv">
+              <dt>デシ（ds）</dt>
+              <dd>革の面積の単位。1デシ = 10cm × 10cm。価格は「1デシあたり◯円」で表されることが多い。</dd>
+              <dt>半裁・ショルダー・ベンズ・ベリー</dt>
+              <dd>半裁は牛一頭を背中で半分にした大きさ。背中側のベンズは繊維が詰まって丈夫、首まわりのショルダーはトラ（シワ）が出やすく、腹側のベリーは伸びやすい。</dd>
+              <dt>銀面・床面・コバ</dt>
+              <dd>銀面は表のなめらかな面、床面は裏のケバ立った面、コバは裁断した切り口。</dd>
+            </dl>
+          </details>
+
+          <details class="card">
+            <summary>厚みの目安</summary>
+            <div class="table-scroll">
+              <table class="tbl">
+                <thead><tr><th>用途</th><th class="num">厚み</th></tr></thead>
+                <tbody>
+                  <tr><td>内装・ポケット・裏地</td><td class="num">0.6〜1.0mm</td></tr>
+                  <tr><td>長財布・二つ折り財布</td><td class="num">1.0〜1.5mm</td></tr>
+                  <tr><td>キーケース・名刺入れなど小物</td><td class="num">1.5〜2.0mm</td></tr>
+                  <tr><td>トート・バッグ本体</td><td class="num">1.5〜2.5mm</td></tr>
+                  <tr><td>ベルト・首輪</td><td class="num">3.0〜4.0mm</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">注文時は「1.5mm漉き」のように漉き加工を頼める店も多いです。</p>
+          </details>
+
+          <details class="card">
+            <summary>基本の道具</summary>
+            <dl class="kv">
+              <dt>裁断</dt><dd>革包丁・別たち・カッター、カッティングマット、銀ペン（線引き）</dd>
+              <dt>穴あけ</dt><dd>菱目打ち（2本・4本など）、菱ギリ、丸ギリ、目打ち、ハトメ抜き（丸ポンチ）、ゴム板、木槌またはモウル</dd>
+              <dt>縫い</dt><dd>レザー針、蝋引き糸、ステッチンググルーバー（縫い溝）、ネジ捻（飾り線）</dd>
+              <dt>仕上げ</dt><dd>ヘリ落とし、ヤスリ、トコノール（床面・コバ処理剤）、スリッカー、コバ塗料</dd>
+              <dt>接着</dt><dd>ゴム系ボンド（ダイアボンドなど）、白ボンド、ヘラ</dd>
+              <dt>金具</dt><dd>カシメ打ち・ハトメ打ち・ホック打ち、打ち台（凹みのある台）</dd>
+            </dl>
+          </details>
+
+          <details class="card">
+            <summary>作業の流れ</summary>
+            <ol class="flow">
+              <li><b>型紙</b>厚紙で作り、縫い代とステッチ位置を書き込む</li>
+              <li><b>裁断</b>型紙を銀ペンで写して切る</li>
+              <li><b>床面・コバ処理</b>トコノールを塗りガラス板やスリッカーで磨く</li>
+              <li><b>接着</b>貼り合わせる面を荒らしてボンドで貼る</li>
+              <li><b>穴あけ</b>菱目打ちで縫い穴をあける</li>
+              <li><b>縫い</b>針2本の平縫いで縫う</li>
+              <li><b>コバ仕上げ</b>ヘリ落とし → ヤスリ → トコノール → 磨き</li>
+              <li><b>金具付け</b>カシメ・ハトメ・ホックを打つ</li>
+            </ol>
+          </details>
+
+          <details class="card">
+            <summary>縫い糸と菱目のピッチ</summary>
+            <div class="table-scroll">
+              <table class="tbl">
+                <thead><tr><th>菱目ピッチ</th><th>向いている物</th><th class="num">糸の太さ目安</th></tr></thead>
+                <tbody>
+                  <tr><td class="num">2.7〜3mm</td><td>財布・名刺入れなど小物</td><td class="num">0.45〜0.55mm</td></tr>
+                  <tr><td class="num">4mm</td><td>バッグ・キーケース</td><td class="num">0.6〜0.8mm</td></tr>
+                  <tr><td class="num">5mm以上</td><td>大きなバッグ・ベルト</td><td class="num">0.8mm〜</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">糸の長さは「縫う距離の約4倍」が目安。足りなくなるより余るほうが楽です。</p>
+          </details>
+
+          <details class="card">
+            <summary>よくある疑問</summary>
+            <dl class="kv">
+              <dt>カシメの足の長さはどう選ぶ？</dt>
+              <dd>挟む革の合計の厚み＋1〜2mmが目安。短いと抜け、長すぎると斜めに潰れます。</dd>
+              <dt>カシメとハトメの違いは？</dt>
+              <dd>カシメは2枚以上の革を留める鋲。ハトメは穴を補強して紐などを通すための金具で、真ん中が空いています。</dd>
+              <dt>菱目打ちが革を貫通しない</dt>
+              <dd>ゴム板の下に硬い台を置き、まっすぐ強めに打つ。厚い革は菱ギリで仕上げるときれいです。</dd>
+              <dt>コバがツヤツヤにならない</dt>
+              <dd>ヘリ落とし → 番手を上げてヤスリ → トコノールを薄く → 乾く前に磨く、を2〜3回くり返します。クローム革は磨きにくいのでコバ塗料が向いています。</dd>
+            </dl>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 号数・サイズ -->
+    <section id="sizes" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>号数・サイズ早見表</h2>
+          <p>数値はよく使われる目安です。メーカー・販売店によって差があるので、買うときは商品ページの寸法も確認してください。</p>
+        </div>
+
+        <div class="size-block">
+          <h3>穴あけポンチ（ハトメ抜き）の号数</h3>
+          <p class="sub">1号 = 0.3mm。下の丸は実寸に近い比率で表示しています。</p>
+          <div class="table-scroll">
+            <table class="tbl punch-tbl" id="punchTable">
+              <thead><tr><th>号数</th><th class="num">穴の直径</th><th>穴のイメージ</th><th>主な用途</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="size-block">
+          <h3>カシメ（両面カシメ）のサイズ</h3>
+          <div class="table-scroll">
+            <table class="tbl">
+              <thead><tr><th>呼び</th><th class="num">頭の直径</th><th class="num">足の長さ</th><th class="num">下穴（ポンチ）</th><th>使いどころ</th></tr></thead>
+              <tbody>
+                <tr><td><b>極小</b></td><td class="num">約4.6〜5mm</td><td class="num">4〜6mm</td><td class="num">6号（1.8mm）</td><td>薄い小物、ペンケースのタブ</td></tr>
+                <tr><td><b>小</b></td><td class="num">約6mm</td><td class="num">6〜8mm</td><td class="num">8号（2.4mm）</td><td>財布・キーケースのベルト留め</td></tr>
+                <tr><td><b>中</b></td><td class="num">約7.2〜9mm</td><td class="num">7〜10mm（足長あり）</td><td class="num">10号（3.0mm）</td><td>バッグの持ち手、ストラップ</td></tr>
+                <tr><td><b>大</b></td><td class="num">約9〜12mm</td><td class="num">9〜10mm</td><td class="num">12号（3.6mm）</td><td>厚い革、バッグの根革</td></tr>
+                <tr><td><b>特大</b></td><td class="num">約12〜13mm</td><td class="num">約10mm</td><td class="num">10〜15号（3.0〜4.5mm）</td><td>大型バッグ、アクセントの鋲</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">「中」の頭の直径はメーカーによって7.2mmのものと9mmのものがあります。下穴は足の太さに合わせ、キツければ1号大きくします。</p>
+          <div class="calc" aria-labelledby="rivetCalcTitle">
+            <p class="calc-title" id="rivetCalcTitle">足の長さを選ぶ</p>
+            <div class="calc-row">
+              <label for="leatherA">革1</label>
+              <input id="leatherA" type="number" step="0.1" min="0" value="1.5" inputmode="decimal"><span class="unit">mm</span>
+              <span class="op">＋</span>
+              <label for="leatherB">革2</label>
+              <input id="leatherB" type="number" step="0.1" min="0" value="1.5" inputmode="decimal"><span class="unit">mm</span>
+            </div>
+            <p class="calc-out" id="rivetResult"></p>
+          </div>
+        </div>
+
+        <div class="size-block">
+          <h3>ハトメ（両面ハトメ）のサイズ</h3>
+          <div class="table-scroll">
+            <table class="tbl">
+              <thead><tr><th>番手</th><th class="num">外径（つば）</th><th class="num">筒の径</th><th class="num">足の長さ</th><th class="num">下穴の目安</th></tr></thead>
+              <tbody>
+                <tr><td><b>#200</b></td><td class="num">約7.5mm</td><td class="num">約4.0mm</td><td class="num">約4.5mm</td><td class="num">13〜14号（3.9〜4.2mm）</td></tr>
+                <tr><td><b>#300</b></td><td class="num">約9.0mm</td><td class="num">約5.0mm</td><td class="num">約5.0mm／足長6.0mm</td><td class="num">17号（5.1mm）</td></tr>
+                <tr><td><b>#25</b></td><td class="num">約19mm</td><td class="num">内径 約9.7mm</td><td class="num">—</td><td class="num">筒の外径に合わせる</td></tr>
+                <tr><td><b>#28</b></td><td class="num">約22.8mm</td><td class="num">内径 約12mm</td><td class="num">—</td><td class="num">筒の外径に合わせる</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">「#◯◯」の番手はメーカーごとに体系が違い、統一規格ではありません。下穴は筒の外径とほぼ同じ大きさ（キツめ）にすると、きれいに開きます。表の下穴は筒の径から計算した目安です。</p>
+        </div>
+
+        <div class="size-block">
+          <h3>穴をあけるときのコツ</h3>
+          <ul class="tips">
+            <li>まず端切れで試し打ちし、金具がキツすぎず緩すぎない号数を探す。</li>
+            <li>ポンチは革に垂直に当て、ゴム板の上で数回に分けて打つ。</li>
+            <li>迷ったら小さい号数から。穴は後から広げられますが、小さくはできません。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- レザークラフトCAD ヘルプ -->
+    <section id="cad" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>レザークラフトCAD 操作説明とヘルプ</h2>
+          <p>型紙づくり用の無料CAD「Leathercraft CAD（レザクラCAD）」の使い方メモです。v4.2.3 時点の公式情報をもとにまとめています。画面や操作は版によって変わるので、違っていたら公式FAQを確認してください。</p>
+        </div>
+
+        <div class="cad-overview">
+          <dl class="spec">
+            <div><dt>開発</dt><dd>LuthierTN（Coffee and Craft）</dd></div>
+            <div><dt>価格</dt><dd>無料（寄付歓迎のカンパウェア）。商用利用・型紙データの販売もOK</dd></div>
+            <div><dt>対応OS</dt><dd>Windows 10/11（64bit推奨）、macOS 13 Ventura 以降（Apple silicon 推奨）</dd></div>
+            <div><dt>その他</dt><dd>インストール不要のブラウザ版「レザクラCAD Web」（ベータ）もあり。メモリ8GB以上推奨</dd></div>
+          </dl>
+          <div class="link-list">
+            <a class="btn" href="https://coffee-craft.net/leathercraft_cad" target="_blank" rel="noopener noreferrer">公式サイト・ダウンロード</a>
+            <a class="btn" href="https://coffee-craft.net/leathercraft_cad/faq" target="_blank" rel="noopener noreferrer">公式FAQ</a>
+            <a class="btn" href="https://coffee-craft.net/leathercraft_cad/tutorial_videos" target="_blank" rel="noopener noreferrer">チュートリアル動画集</a>
+            <a class="btn" href="https://coffee-craft.net/leathercraft_cad/known_issues" target="_blank" rel="noopener noreferrer">既知の不具合</a>
+            <button type="button" class="btn primary" id="addCadPlaylist">公式チュートリアル再生リストをお気に入りに追加</button>
+          </div>
+          <p class="form-msg" id="cadMsg" role="status"></p>
+        </div>
+
+        <div class="cad-grid">
+          <div class="cad-col">
+            <h3>はじめての型紙（カードケースの片面を作る例）</h3>
+            <ol class="steps">
+              <li><b>新規作成</b><span><kbd>Ctrl</kbd>+<kbd>N</kbd> で新しい図面を開く。</span></li>
+              <li><b>外形を描く</b><span><kbd>R</kbd>（四角）でドラッグし、<kbd>Enter</kbd> で数値パレットを開いて幅・高さを mm で入力（例：100 × 65mm）。</span></li>
+              <li><b>角を丸める</b><span><kbd>X</kbd>（面取り）で角をクリックして半径を指定。複数の角をまとめて丸められます。</span></li>
+              <li><b>ステッチラインを作る</b><span><kbd>O</kbd>（オフセット）で外形を内側へ 3〜4mm ずらした線を作る。</span></li>
+              <li><b>縫い穴を並べる</b><span><kbd>P</kbd>（目打ち）で菱目などの刃を選び、ステッチラインに沿って配置。自動配置なら「可変ピッチ」で角まで等間隔に近づけられます。</span></li>
+              <li><b>寸法を確認</b><span><kbd>#</kbd>（寸法線）で長さを入れる。<kbd>F5</kbd> で寸法線の表示を切り替え。</span></li>
+              <li><b>保存</b><span><kbd>Ctrl</kbd>+<kbd>S</kbd>。ファイルは .LCC 形式で保存されます。</span></li>
+              <li><b>原寸で印刷</b><span>初めてのプリンタは先に「キャリブレーション印刷」（下の手順）。その後 <kbd>Ctrl</kbd>+<kbd>P</kbd> で拡大縮小「なし／100%」で印刷。</span></li>
+            </ol>
+            <p class="note">Mac では <kbd>Ctrl</kbd> → <kbd>⌘</kbd>、<kbd>Alt</kbd> → <kbd>option</kbd> に読み替えてください。</p>
+          </div>
+
+          <div class="cad-col">
+            <h3>修飾キーの考え方</h3>
+            <div class="table-scroll">
+              <table class="tbl">
+                <thead><tr><th>キー</th><th>はたらき</th></tr></thead>
+                <tbody>
+                  <tr><td><kbd>Shift</kbd></td><td>拘束（水平・垂直、正円、角度の丸めの解除など）</td></tr>
+                  <tr><td><kbd>Ctrl</kbd></td><td>吸着（端点・交点・グリッドへのスナップ）を一時解除、追加選択</td></tr>
+                  <tr><td><kbd>Alt</kbd></td><td>基準点を逆側にする</td></tr>
+                  <tr><td><kbd>Esc</kbd></td><td>操作を一段階ずつ解除</td></tr>
+                  <tr><td><kbd>Enter</kbd></td><td>数値パレットを開いて長さ・角度・半径を数値入力</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 class="mt">マウス操作</h3>
+            <div class="table-scroll">
+              <table class="tbl">
+                <thead><tr><th>操作</th><th>はたらき</th></tr></thead>
+                <tbody>
+                  <tr><td>ホイール</td><td>拡大・縮小</td></tr>
+                  <tr><td><kbd>Shift</kbd>+ホイール</td><td>横スクロール</td></tr>
+                  <tr><td><kbd>Ctrl</kbd>+ホイール</td><td>選択した図形を回転</td></tr>
+                  <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+ホイール</td><td>選択した図形を拡大縮小</td></tr>
+                  <tr><td>ダブルクリック</td><td>つながっている図形をまとめて選択</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="size-block">
+          <h3>ツールとショートカットキー</h3>
+          <div class="fav-toolbar">
+            <div class="chips" id="keyFilter" role="group" aria-label="ショートカットの種類"></div>
+            <input id="keySearch" type="search" placeholder="例：オフセット、印刷、P" aria-label="ショートカットを検索">
+          </div>
+          <div class="table-scroll">
+            <table class="tbl key-tbl">
+              <thead><tr><th>キー</th><th>機能</th><th>説明</th></tr></thead>
+              <tbody id="keyTable"></tbody>
+            </table>
+          </div>
+          <p class="note" id="keyCount"></p>
+        </div>
+
+        <div class="cad-grid">
+          <div class="cad-col">
+            <h3>原寸で印刷する（キャリブレーション）</h3>
+            <ol class="steps">
+              <li><b>校正パターンを印刷</b><span>ファイル →「キャリブレーション印刷...」→ Step1。プリンタ側は「実際のサイズ／100%」、用紙は縦向き。横160mm × 縦220mm の定規が出ます。</span></li>
+              <li><b>実測して入力</b><span>Step2 で印刷物の横（X）と縦（Y）を定規で測って mm で入力。1枚目は紙送りが不安定なことがあるので、2枚目以降を測るのがおすすめ。</span></li>
+              <li><b>検証して追い込む</b><span>Step3 の「検証ページを印刷」。まだずれていれば実測値を入れて「追い込む」。</span></li>
+              <li><b>閉じる</b><span>補正値はプリンタごとに保存されます。16×22cm の定規がなければ、設定で 100×100mm の校正パターンに切り替えられます。</span></li>
+            </ol>
+          </div>
+          <div class="cad-col">
+            <h3>PDF・データの書き出し</h3>
+            <dl class="kv">
+              <dt>原寸PDFにする</dt>
+              <dd>ファイル → 印刷。Windows は「Microsoft Print to PDF」、Mac は印刷ダイアログ左下の「PDF」→「PDFとして保存…」。拡大縮小は「なし／100%」。PDFには100mm角の定規も入るので、印刷後に測って確認できます。</dd>
+              <dt>コンビニ印刷でも補正したい</dt>
+              <dd>編集 → 設定の「PDFエクスポートの時はサイズ補正を行わない」のチェックを外す（v4.0以降は初期状態だと補正なしの原寸）。</dd>
+              <dt>レーザー・カッティングマシン用</dt>
+              <dd>SVG または DXF で書き出し。人に図面を渡すときは .LCC のままが一番確実です。</dd>
+              <dt>大きい型紙</dt>
+              <dd>複数ページ・分割（タイル）印刷に対応。<kbd>F7</kbd> で印刷範囲を表示して確認できます。</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="size-block">
+          <h3>困ったときは（トラブルシューティング）</h3>
+          <div class="help-list" id="cadHelp">
+            <details class="card">
+              <summary>印刷するとサイズが少しずれる</summary>
+              <p>まず印刷ダイアログの拡大縮小を「なし」または「100%」にします。それでもずれる場合は、上の「キャリブレーション」でプリンタごとの補正値を設定します。Windows なら一度「Microsoft Print to PDF」で原寸PDFにしてから印刷すると安定します。</p>
+            </details>
+            <details class="card">
+              <summary>点や線が勝手にくっついて、思った位置に置けない</summary>
+              <p><kbd>Ctrl</kbd> を押しながらドラッグすると吸着が外れます。グリッドに吸着しているなら <kbd>G</kbd> でグリッドを非表示にします。細かい位置は <kbd>Ctrl</kbd>+矢印（1mm）、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+矢印（0.1mm）で動かせます。</p>
+            </details>
+            <details class="card">
+              <summary>線を角でぴったりつなげたい・はみ出しを消したい</summary>
+              <p>2本の直線を選んで <kbd>Z</kbd>。交点まで延長するか、交点ではみ出した部分をトリムします。いらない部分だけ切るなら <kbd>!</kbd>（トリミング）。</p>
+            </details>
+            <details class="card">
+              <summary>紙の型紙や写真をなぞって作りたい</summary>
+              <p><kbd>W</kbd>（透かし）で画像を読み込み、<kbd>H</kbd> で表示を切り替えます。PDFは等倍で読み込まれるので、スキャナで取り込んだ型紙やカードを実寸の基準に使えます。JPEG・PNG は解像度（DPI）を手で入力して大きさを合わせます。</p>
+            </details>
+            <details class="card">
+              <summary>2枚のパーツの縫い穴の数を合わせたい</summary>
+              <p>「駒合わせ縫いヘルパー」を使うと、曲線どうしでも穴の数と位置を揃えられます。公式チュートリアル動画 #07 で解説されています。</p>
+            </details>
+            <details class="card">
+              <summary>お札・カード・コインの大きさを確認したい</summary>
+              <p><kbd>Y</kbd>（テンプレート／パーツ倉庫）からお札・カード・コインなどの形を呼び出して、型紙に重ねて確認できます。</p>
+            </details>
+            <details class="card">
+              <summary>Mac で「開けません」と出る</summary>
+              <p>システム設定の「プライバシーとセキュリティ」で「このまま開く」を押します。macOS 15 でログインパスワードを設定していない場合の対処も公式FAQに書かれています。</p>
+            </details>
+            <details class="card">
+              <summary>Mac で印刷すると「インデックスエラー」になる</summary>
+              <p>プリンタが1台も登録されていないと起きます。仮想プリンタ（PDFプリンタなど）を追加すると印刷・PDF保存ができるようになります。</p>
+            </details>
+            <details class="card">
+              <summary>Windows でインストーラがブロックされる</summary>
+              <p>ダウンロードは必ず公式サイトのリンクから行い、公式サイトに載っている MD5 の値とファイルが一致するか確認してください。対処方法は公式FAQに載っています。</p>
+            </details>
+            <details class="card">
+              <summary>動画の画面と自分の画面が違う</summary>
+              <p>古いバージョンの動画は、画面や機能が今と一部異なります。最新の動画やリリースノートを確認してください。最新版の一部の動画は YouTube メンバーシップ限定です。</p>
+            </details>
+          </div>
+          <p class="note">出典：<a href="https://coffee-craft.net/leathercraft_cad" target="_blank" rel="noopener noreferrer">Leathercraft CAD 公式サイト</a>（紹介ページ・FAQ・ショートカットキー一覧）。不具合報告や要望は X のハッシュタグ「#レザクラCAD」で作者に届けられます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- お気に入り -->
+    <section id="favorites" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>お気に入りのサイト・動画</h2>
+          <p>URLを貼るだけで登録できます。YouTube・Vimeoの動画はページ内で再生できます。サイトはリンクカードで表示し、埋め込みを許可しているサイトはプレビューも開けます。</p>
+        </div>
+
+        <form id="favForm" class="fav-form" autocomplete="off">
+          <div class="field grow">
+            <label for="favUrl">URL または 埋め込みコード</label>
+            <input id="favUrl" type="text" placeholder="https://www.youtube.com/watch?v=... や https://..." required>
+          </div>
+          <div class="field">
+            <label for="favTitle">タイトル（任意）</label>
+            <input id="favTitle" type="text" placeholder="例：コバ磨きのやり方">
+          </div>
+          <div class="field">
+            <label for="favTag">カテゴリ</label>
+            <input id="favTag" type="text" list="tagList" placeholder="例：縫い方">
+            <datalist id="tagList"></datalist>
+          </div>
+          <div class="field full">
+            <label for="favMemo">メモ（任意）</label>
+            <input id="favMemo" type="text" placeholder="例：5分あたりからが大事">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">登録する</button>
+            <p id="favMsg" class="form-msg" role="status"></p>
+          </div>
+        </form>
+
+        <div class="fav-toolbar">
+          <div class="chips" id="tagFilter" role="group" aria-label="カテゴリで絞り込み"></div>
+          <input id="favSearch" type="search" placeholder="キーワードで探す" aria-label="お気に入りを検索">
+        </div>
+
+        <div id="favList" class="fav-list"></div>
+        <div id="favEmpty" class="empty" hidden>
+          <p class="empty-title">まだ登録がありません</p>
+          <p>上のフォームに、よく見るYouTube動画やブログのURLを貼って「登録する」を押してください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- マイメモ -->
+    <section id="notes" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>マイメモ（わからないこと帳）</h2>
+          <p>作業中に出てきた疑問と、わかった答えを書きためておく場所です。答えがまだなら空欄のままでOK。</p>
+        </div>
+
+        <form id="noteForm" class="note-form" autocomplete="off">
+          <div class="field full">
+            <label for="noteQ">わからないこと</label>
+            <input id="noteQ" type="text" placeholder="例：ヌメ革の水シミはどう防ぐ？" required>
+          </div>
+          <div class="field full">
+            <label for="noteA">わかったこと・答え</label>
+            <textarea id="noteA" rows="3" placeholder="例：最初にミンクオイルを薄く塗っておく"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">メモを追加</button>
+          </div>
+        </form>
+
+        <div class="note-filter chips" id="noteFilter" role="group" aria-label="メモの絞り込み">
+          <button type="button" class="chip is-on" data-f="all">すべて</button>
+          <button type="button" class="chip" data-f="open">未解決</button>
+          <button type="button" class="chip" data-f="done">解決済み</button>
+        </div>
+        <div id="noteList" class="note-list"></div>
+        <div id="noteEmpty" class="empty" hidden>
+          <p class="empty-title">メモはまだありません</p>
+          <p>上の欄に疑問を書いて「メモを追加」を押してください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section backup">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>データの保存とバックアップ</h2>
+          <p>お気に入りとマイメモは、このブラウザの中に保存されます。別のパソコンやスマホに移すときや、念のための控えとして書き出しておけます。</p>
+        </div>
+        <div class="backup-row">
+          <button type="button" class="btn" id="exportBtn">ファイルに書き出す</button>
+          <label class="btn" for="importFile">ファイルから読み込む</label>
+          <input id="importFile" type="file" accept="application/json,.json" hidden>
+          <p id="backupMsg" class="form-msg" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">革しごと手帖 — 自分用レザークラフトノート</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
